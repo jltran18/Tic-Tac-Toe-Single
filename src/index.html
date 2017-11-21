@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #layout {
+            position: absolute;
+            margin: 0 38%;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-left: 112px;
+        }
+
+        #table1 {
+            background-color: #8DC0FF;
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        #table1 .cell {
+            width: 120px;
+            height: 120px;
+            display: inline-block;
+            transform: translateX(5px) translateY(5px);
+        }
+
+        #table1 .rowOne, #table1 .rowTwo, #table1 .rowThree {
+            width: 95%;
+            margin-left: 10px;
+        }
+
+        #table1 .lines {
+            border-right: 2px solid black;
+            border-left: 2px solid black;
+            display: inline-block;
+        }
+
+        #table1 .rowTwo {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            display: inline-block;
+        }
+
+        #table1 .xPlayer {
+            background: firebrick;
+            height: 115px;
+            width: 20px;
+            transform: rotate(135deg) translateX(-40px) translateY(-30px);
+            display: inline-block;
+            position: relative;
+
+        }
+        #table1 .xPlayer:after {
+            background: firebrick;
+            content: "";
+            height: 20px;
+            left: -50px;
+            position: absolute;
+            top: 48px;
+            width: 115px;
+        }
+
+        #table1 .oPlayer {
+            width: 115px;
+            height: 115px;
+            background-color: #FFDA45;
+            border-radius: 60px;
+            position: relative;
+            left: 3px;
+        }
+
+        #table1 .oPlayer:after {
+            width: 70px;
+            height: 70px;
+            content: "";
+            border-radius: 60px;
+            background-color: #8DC0FF;
+            border: 2px solid #FFDA45;
+            position: absolute;
+            top: 22px;
+            left: 21px;
+        }
+
+        .playerTurn {
+            margin-top: 30px;
+            margin-right: 35px;
+            display: inline-block;
+            font-size: 25px;
+            font-weight: bold;
+            color: darkcyan;
+        }
+
+        .restart {
+            cursor: pointer;
+            float: right;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: darkblue;
+
+            border: 2px solid darkgray;
+            background-color: darkgray;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+
+        .restart:hover {
+            background-color: lightgray;
+            border: 2px solid lightgray;
+            color: cornflowerblue;
+        }
+
+        .winner {
+            width: 320px;
+            height: 20px;
+            color: red;
+            font-size: 30px;
+            position: absolute;
+            display: inline-block;
+            transform: translateY(90px) translateX(-150px);
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="layout">
+    <h1>Tic-Tac-Toe</h1>
+    <div id="table1">
+            <div class="rowOne">
+                <div class="c0 cell" onclick="setCell(0)"></div>
+                <div class="c1 cell lines" onclick="setCell(1)"></div>
+                <div class="c2 cell" onclick="setCell(2)"></div>
+            </div>
+            <div class="rowTwo">
+                <div class="c3 cell" onclick="setCell(3)"></div>
+                <div class="c4 cell lines" onclick="setCell(4)"></div>
+                <div class="c5 cell" onclick="setCell(5)"></div>
+            </div>
+            <div class="rowThree">
+                <div class="c6 cell" onclick="setCell(6)"></div>
+                <div class="c7 cell lines" onclick="setCell(7)"></div>
+                <div class="c8 cell" onclick="setCell(8)"></div>
+            </div>
+    </div>
+    <span class="playerTurn"></span>
+    <span class="winner"></span>
+    <span class="restart" onclick="start()">Restart</span>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./index.js"></script>
+</div>
+</body>
+</html>
